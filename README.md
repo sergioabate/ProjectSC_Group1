@@ -1,4 +1,4 @@
-![imagen](https://github.com/user-attachments/assets/74254306-9409-465a-9427-737252acafd7)# Manual
+![imagen](https://github.com/user-attachments/assets/9da8ca9f-f3ae-4cf9-9a9c-7de87dc29d7e)# Manual
 
 This manual explains how to set up the Wi-Fi Access Point on the computer, with all the respective settings.
 It also explains how to use the User Interface and its contents.
@@ -119,20 +119,21 @@ sudo systemctl restart dnsmaq
 In order to use the user interface, you must run the following in the repository root:
 
 ```sh
-python3 server.py
+sudo python3 server.py
 ```
 
-This activates the server, which will be accessible at http://127.0.0.1:5000.
+This activates the server, which will be accessible at http://127.0.0.1:5000. It's important to activate it with `sudo` in order to have access to the `Hotsapd` service.
 
 The interface has three different tabs. In the main one, (AP Settings), you can modify the Frequency Band of the Access Point and select the channel you want to configure.
 
-![imagen](https://github.com/user-attachments/assets/14546f8b-6b07-4e8d-8878-fc65021ffcd0)
+![imagen](https://github.com/user-attachments/assets/b4bedc87-4d88-4a51-8fc7-8e8d44e07677)
 
 In the second one, the monitoring data of the Access Point is shown, in which we can see values and graphs of throughput, packet loss and delay.
 
-![imagen](https://github.com/user-attachments/assets/8c278cb5-8601-46b2-bd0c-be09773b0001)
+![imagen](https://github.com/user-attachments/assets/eca186e4-1317-40d3-915f-8c009ef01b35)
 
 In the third one, the devices connected to the Access Point can be displayed.
 
-![imagen](https://github.com/user-attachments/assets/40d3a60d-cf23-4828-9ef8-0a5769a72377)
+![imagen](https://github.com/user-attachments/assets/b6977911-df85-4b61-a54a-659c2a5c77f3)
+
 
