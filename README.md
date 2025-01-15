@@ -4,7 +4,7 @@ This manual explains how to set up the Wi-Fi Access Point on the computer, with 
 It also explains how to use the User Interface and its contents.
 
 >[!IMPORTANT] 
-> When `<wireless_interface>` is mentioned in the manual, it refers to the name of the wireless interface of the computer to be used. Same for `<virtual_interface>`.
+> When `<wireless_interface>` is mentioned in the manual, it refers to the name of the wireless interface of the computer to be used. Same for `<virtual_interface>`, which refers to the virtual interface that is created.
 
 ## Contents
 
