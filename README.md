@@ -1,4 +1,4 @@
-![imagen](https://github.com/user-attachments/assets/9da8ca9f-f3ae-4cf9-9a9c-7de87dc29d7e)# Manual
+# Manual
 
 This manual explains how to set up the Wi-Fi Access Point on the computer, with all the respective settings.
 It also explains how to use the User Interface and its contents.
