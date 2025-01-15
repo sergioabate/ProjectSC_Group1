@@ -3,7 +3,8 @@
 This manual explains how to set up the Wi-Fi Access Point on the computer, with all the respective settings.
 It also explains how to use the User Interface and its contents.
 
-** When `<wireless_interface>` is mentioned in the manual, it refers to the name of the wireless interface of the computer to be used. Same for `<virtual_interface>`.
+>[!IMPORTANT] 
+> When `<wireless_interface>` is mentioned in the manual, it refers to the name of the wireless interface of the computer to be used. Same for `<virtual_interface>`.
 
 ## Contents
 
@@ -27,7 +28,7 @@ For the user interface, the `Python Flask` package must be installed. To do this
 
 ``` sh
 python -m venv venv
-venv/bin/activate
+source venv/bin/activate
 pip install flask
 ```
 
@@ -121,10 +122,11 @@ In order to use the user interface, you must run the following in the repository
 ```sh
 sudo python3 server.py
 ```
+It needs to be run with superuser permissions (`sudo`) in order to have access to the `Hostapd` service, as well as for the `arp-scan` tool to function properly.
 
-This activates the server, which will be accessible at http://127.0.0.1:5000. It's important to activate it with `sudo` in order to have access to the `Hotsapd` service.
+This starts the server, which will be accessible at the IP address of the interface of the access point, defined at the [Hostapd Configuration](#21-hostapd-configuration). Once started, any device from within the network can connect to it using said IP
 
-The interface has three different tabs. In the main one, (AP Settings), you can modify the Frequency Band of the Access Point and select the channel you want to configure.
+Upon navigation to the web server hosted at the access point, you can see three different tabs. In the main one, (AP Settings), you can modify the Frequency Band (2.4GHz or 5GHz) of the Access Point and select the channel you want to configure.
 
 ![imagen](https://github.com/user-attachments/assets/b4bedc87-4d88-4a51-8fc7-8e8d44e07677)
 
@@ -132,7 +134,7 @@ In the second one, the monitoring data of the Access Point is shown, in which we
 
 ![imagen](https://github.com/user-attachments/assets/eca186e4-1317-40d3-915f-8c009ef01b35)
 
-In the third one, the devices connected to the Access Point can be displayed.
+In the third one, the devices connected to the Access Point are displayed.
 
 ![imagen](https://github.com/user-attachments/assets/b6977911-df85-4b61-a54a-659c2a5c77f3)
 
