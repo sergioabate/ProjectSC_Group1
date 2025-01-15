@@ -117,14 +117,28 @@ sudo systemctl restart dnsmaq
 
 ## 3 User Interface
 
-In order to use the user interface, you must run the following in the repository root:
+Before running the web server, which acts as a user interface configuration and monitoring tool, you need to set up some parameters:
+* Set the wireless interface of the access point to be used during `arp-scan`. This is set in file `server.py`, near line number 105:
+```python
+104    # IMPORTANT! Manually modify for it to properly work
+105    interface = "wlo1" 
+106    try:
+107      ...
+```
+* Set the server URL in which automatic monitoring requests are made. This URL must be the same one used to access the web server, and corresponds to the AP IP address. An URL example could be `http://192.168.1.1:5000`. This must be defined in file `static/monitoratge.js`, at the first line:
+```js
+1 // IP de l'access point
+2 const serverUrl = "http://192.168.1.68:5000";
+3 ...
+```
 
+Once everything is set up, you can start the web server running the following in the repository root:
 ```sh
 sudo python3 server.py
 ```
 It needs to be run with superuser permissions (`sudo`) in order to have access to the `Hostapd` service, as well as for the `arp-scan` tool to function properly.
 
-This starts the server, which will be accessible at the IP address of the interface of the access point, defined at the [Hostapd Configuration](#21-hostapd-configuration). Once started, any device from within the network can connect to it using said IP
+This starts the server, which will be accessible at the IP address of the interface of the access point, defined at the [Hostapd Configuration](#21-hostapd-configuration), using the default Flask port 5000. Once started, any device from within the network can connect to it using said IP, for example at `http://192.168.1.1:5000`.
 
 Upon navigation to the web server hosted at the access point, you can see three different tabs. In the main one, (AP Settings), you can modify the Frequency Band (2.4GHz or 5GHz) of the Access Point and select the channel you want to configure.
 
