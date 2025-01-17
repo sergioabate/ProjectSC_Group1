@@ -101,7 +101,8 @@ def discover_devices():
     """
     Executa `arp-scan`. Requereix instal·lar-lo (sudo apt install arp-scan)
     """
-    # IMPORTANT! Manually modify for it to properly work
+    # IMPORTANT! Manually modify for it to properly work, otherwise arp-scan won't use the 
+    # correct interface to scan
     interface = "wlo1" 
     try:
         # Execute the arp-scan command
@@ -131,33 +132,6 @@ def discover_devices():
         return jsonify({'status': 'error', 'message': 'arp-scan is not installed'})
     except Exception as e:
         return jsonify({'status': 'error', 'message': f'Unknown error: {e}'})
-
-@app.route('/test2', methods=['POST'])
-def run_tests():
-    try:
-        throughput_result = subprocess.run(
-            ['iperf3', '-c', '192.168.1.1'], capture_output=True, text=True
-        ).stdout
-
-        ping_result = subprocess.run(
-            ['ping', '-c', '5', '192.168.1.1'], capture_output=True, text=True
-        ).stdout
-
-
-        throughput = "20 Mbps"
-        packet_loss = "0%"
-        delay = "30 ms"
-
-        return jsonify({
-            'status': 'success',
-            'throughput': throughput,
-            'packet_loss': packet_loss,
-            'delay': delay
-        })
-    except subprocess.CalledProcessError as e:
-        return jsonify({'status': 'error', 'message': f'Command failed: {e}'})
-    except Exception as e:
-        return jsonify({'status': 'error', 'message': str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', threaded=True)
