@@ -11,7 +11,7 @@ It also explains how to use the User Interface and its contents.
 ```sh
 valid interface combinations:
   * #{ managed } <= 1, #{ AP, P2P-client, P2P-GO } <= 1, #{ P2P-device } <= 1,
-		   total <= 3, #channels <= 2
+  total <= 3, #channels <= 2
 ```
 
 ## Contents
