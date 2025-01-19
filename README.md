@@ -6,6 +6,14 @@ It also explains how to use the User Interface and its contents.
 >[!IMPORTANT] 
 > When `<wireless_interface>` is mentioned in the manual, it refers to the name of the wireless interface of the computer to be used. Same for `<virtual_interface>`, which refers to the virtual interface that is created.
 
+>[!IMPORTANT]
+>The computer's Wi-Fi card must have specific characteristics for it to work properly. Specifically, the following must appear at the output of the iwlist command:
+```sh
+valid interface combinations:
+  * #{ managed } <= 1, #{ AP, P2P-client, P2P-GO } <= 1, #{ P2P-device } <= 1,
+		   total <= 3, #channels <= 2
+```
+
 ## Contents
 
 - [1 - Installation of required packages](#1-Installation-of-required-packages)
