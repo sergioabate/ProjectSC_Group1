@@ -13,6 +13,8 @@ valid interface combinations:
   * #{ managed } <= 1, #{ AP, P2P-client, P2P-GO } <= 1, #{ P2P-device } <= 1,
   total <= 3, #channels <= 2
 ```
+>[!IMPORTANT] 
+> There is a video showing a demonstration of how it works. It can be viewed via the following link: https://youtu.be/9pF-2pSFQig
 
 ## Contents
 
